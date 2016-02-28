@@ -15,6 +15,7 @@ import android.widget.ListView;
 
 import se.bolzyk.healhme.fragments.ConnectFragment;
 import se.bolzyk.healhme.fragments.FixturesFragment;
+import se.bolzyk.healhme.fragments.MapsFragment;
 import se.bolzyk.healhme.fragments.TableFragment;
 
 /**
@@ -45,11 +46,12 @@ public class MainActivity extends AppCompatActivity {
 
         setupToolbar();
 
-        DataModel[] drawerItem = new DataModel[3];
+        DataModel[] drawerItem = new DataModel[4];
 
         drawerItem[0] = new DataModel(R.drawable.connect, "Connect");
         drawerItem[1] = new DataModel(R.drawable.fixtures, "Fixtures");
         drawerItem[2] = new DataModel(R.drawable.table, "Table");
+        drawerItem[3] = new DataModel(R.drawable.table, "Maps");
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         getSupportActionBar().setHomeButtonEnabled(true);
 
@@ -87,6 +89,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 2:
                 fragment = new TableFragment();
+                break;
+            case 3:
+                fragment = new MapsFragment();
                 break;
 
             default:
