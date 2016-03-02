@@ -1,6 +1,5 @@
 package se.bolzyk.healhme;
 
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
@@ -17,6 +16,7 @@ import se.bolzyk.healhme.fragments.ConnectFragment;
 import se.bolzyk.healhme.fragments.FixturesFragment;
 import se.bolzyk.healhme.fragments.MapsFragment;
 import se.bolzyk.healhme.fragments.TableFragment;
+
 
 /**
  * Created by Andreas Bolzyk on 28/02/26
