@@ -1,5 +1,6 @@
 package se.bolzyk.healhme.fragments;
 
+import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -7,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -20,63 +20,62 @@ import se.bolzyk.healhme.R;
 /**
  * Created by andreasbolzyk on 2016-02-28.
  */
-public class MapsFragment extends Fragment {
+public class MapsFragment extends Fragment  {
 
 
     private SupportMapFragment mapFragment;
-
-    //public MapsFragment() {}
+    private FragmentManager fragmentManager;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         View rootView = inflater.inflate(R.layout.fragment_maps, container, false);
         return rootView;
     }
 
-    /*
-    Create the maps view and set some parameters as zoom and position
-     */
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        FragmentManager fm = getChildFragmentManager();
-        mapFragment = (SupportMapFragment) fm.findFragmentById(R.id.mapview);
+        fragmentManager = getChildFragmentManager();
+        mapFragment = (SupportMapFragment) fragmentManager.findFragmentById(R.id.mapview);
 
-        //Set up view first time
         if (mapFragment == null) {
+
             mapFragment = SupportMapFragment.newInstance();
-            fm.beginTransaction().replace(R.id.mapview, mapFragment).commit();
+            fragmentManager.beginTransaction().replace(R.id.mapview, mapFragment).commit();
 
-            mapFragment.getMapAsync(new OnMapReadyCallback() {
-                @Override
-                public void onMapReady(final GoogleMap googleMap) {
-
-                    setMapValues(googleMap);
-
-
-
-                    googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(63.816, 20.317), 12));
-
-                }
-            });
-
-        //Update view
         } else {
-            mapFragment.getMapAsync(new OnMapReadyCallback() {
-                @Override
-                public void onMapReady(final GoogleMap googleMap) {
 
-                    setMapValues(googleMap);
-                }
-            });
 
         }
+
+        mapFragment.getMapAsync(new OnMapReadyCallback() {
+            @Override
+            public void onMapReady(final GoogleMap googleMap) {
+
+                setMapValues(googleMap);
+
+
+                //use my location to zoom in of the area
+                googleMap.setOnMyLocationChangeListener(new GoogleMap.OnMyLocationChangeListener() {
+                    @Override
+                    public void onMyLocationChange(Location location) {
+
+                        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 12));
+                    }
+                });
+            }
+        });
+
     }
 
 
     private void setMapValues(final GoogleMap googleMap) {
+
+        googleMap.setMyLocationEnabled(true);
 
         //iksu
         googleMap.addMarker(new MarkerOptions().position(new LatLng(63.818676, 20.318376)).title("Iksu Sport"));
@@ -89,8 +88,6 @@ public class MapsFragment extends Fragment {
         googleMap.addMarker(new MarkerOptions().position(new LatLng(63.857612, 20.313235)).title("Tenton"));
 
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-
-        googleMap.setMyLocationEnabled(true);
 
     }
 }
