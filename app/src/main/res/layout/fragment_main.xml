@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/heal_me_bg">
+
+        <!-- content holder for the design -->
+        <LinearLayout
+            android:id="@+id/container_frame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:gravity="center_horizontal"
+                android:paddingBottom="20dp"
+                android:text="Welcome to HealthMe"
+                android:textSize="45dp"
+                android:textStyle="bold"
+                android:textColor="#ffffff"/>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:paddingBottom="25dp"
+                android:scaleType="center"
+                android:src="@drawable/healh_me_logo_v" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:layout_below="@id/label"
+                android:layout_gravity="center_horizontal|bottom"
+                android:gravity="center"
+                android:paddingBottom="20dp"
+                android:text="We will help you to get a better overview of how healthy your are!"
+                android:textSize="12dp"
+                android:textColor="#ffffff"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="{relativePackage}.${activityClass}"
+    android:background="#ffffff">
+
+
+    <LinearLayout
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp" >
+
+        <!-- choose activity -->
+        <TextView
+            android:id="@+id/choose_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_activity"
+            android:textColor="#000000"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp" />
+        <Spinner
+            android:id="@+id/activity_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/accent"
+            android:padding="15dp"/>
+
+
+        <!-- choose day -->
+        <TextView
+            android:id="@+id/choose_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_date"
+            android:textColor="#000000"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="15dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/in_date"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:hint="@string/temp_date"
+            android:textColorHint="@color/divider"
+            android:padding="10dp"
+            android:textColor="#000000" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_date"
+            android:id="@+id/btn_date"
+            android:layout_alignBottom="@+id/in_date"
+            android:layout_toRightOf="@+id/in_date"
+            android:layout_toEndOf="@+id/in_date"
+            android:background="@color/accent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp" />
+
+
+        <!-- safe and read -->
+        <TextView
+            android:id="@+id/save_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save_activity"
+            android:textColor="#000000"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="15dp" />
+        <Button
+            android:id="@+id/update_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save_activity"
+            android:background="@color/accent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp" />
+        <Button
+            android:id="@+id/read_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/read_data"
+            android:background="@color/accent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

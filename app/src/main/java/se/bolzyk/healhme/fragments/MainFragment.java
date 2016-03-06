@@ -9,20 +9,15 @@ import android.view.ViewGroup;
 import se.bolzyk.healhme.R;
 
 /**
- * Created by Andreas Bolzyk on 28/02/26
- * This is a fragment
+ * Created by andreasbolzyk on 2016-02-23.
  */
-public class ConnectFragment extends Fragment {
-
-    public ConnectFragment() {
-    }
+public class MainFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_connect, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
         return rootView;
     }
-
 }

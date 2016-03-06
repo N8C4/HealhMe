@@ -1,8 +1,67 @@
 <resources>
 
+
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
+
+
+
+        <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
+        <item name="android:spinnerItemStyle">@style/mySpinnerItemStyle</item>
+        <item name="android:spinnerDropDownItemStyle">@style/mySpinnerDropDownItemStyle</item>
+
+        <!--<item name="android:textColor">@color/primaryText</item>
+        <item name="android:textColorSecondary">@color/secondaryText</item>
+
+
+        <item name="android:divider">@color/divider</item>
+        <item name="android:selectable">@color/divider</item>
+
+        <item name="android:toolbarStyle">@color/darkPrimary</item>-->
+
+
+
+        <!--<item name="colorPrimary">#1565C0</item>
+        <item name="colorPrimaryDark">#0D47A1</item>
+        <item name="colorAccent">#FF80AB</item>
+        <item name="colorControlNormal">#757575</item>
+        <item name="colorControlActivated">#FF6E40</item>
+        <item name="colorControlHighlight">#FF4081</item>
+        <item name="colorSwitchThumbNormal">#BDBDBD</item>
+        <item name="android:colorButtonNormal">#BDBDBD</item>
+        <item name="android:colorEdgeEffect">#FF4081</item>-->
+
+
     </style>
+
+
+    <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:datePickerStyle">@style/MyDatePickerStyle</item>
+    </style>
+
+
+    <style name="MyDatePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">
+        <item name="android:headerBackground">@color/accent</item>
+    </style>
+
+
+    <style name="mySpinnerItemStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/text</item>
+    </style>
+
+
+    <style name="mySpinnerDropDownItemStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:background">@color/accent</item>
+    </style>
+
 
 </resources>

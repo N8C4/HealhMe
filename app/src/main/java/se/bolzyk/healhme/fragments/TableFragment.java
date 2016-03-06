@@ -21,6 +21,7 @@ public class TableFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_table, container, false);
 
+
         return rootView;
     }
 

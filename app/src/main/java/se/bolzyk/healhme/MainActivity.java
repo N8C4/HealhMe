@@ -12,8 +12,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import se.bolzyk.healhme.fragments.ConnectFragment;
+import se.bolzyk.healhme.fragments.ActivityFragment;
 import se.bolzyk.healhme.fragments.FixturesFragment;
+import se.bolzyk.healhme.fragments.MainFragment;
 import se.bolzyk.healhme.fragments.MapsFragment;
 import se.bolzyk.healhme.fragments.TableFragment;
 
@@ -46,12 +47,14 @@ public class MainActivity extends AppCompatActivity {
 
         setupToolbar();
 
-        DataModel[] drawerItem = new DataModel[4];
+        DataModel[] drawerItem = new DataModel[5];
 
-        drawerItem[0] = new DataModel(R.drawable.connect, "Connect");
-        drawerItem[1] = new DataModel(R.drawable.fixtures, "Fixtures");
-        drawerItem[2] = new DataModel(R.drawable.table, "Table");
-        drawerItem[3] = new DataModel(R.drawable.table, "Maps");
+        drawerItem[0] = new DataModel(R.drawable.healh_me_logo_v_small, "");
+        drawerItem[1] = new DataModel(R.drawable.ic_build_white, "Add Activity");
+        drawerItem[2] = new DataModel(R.drawable.ic_build_white, "Fixtures");
+        drawerItem[3] = new DataModel(R.drawable.ic_build_white, "Table");
+        drawerItem[4] = new DataModel(R.drawable.ic_build_white, "Maps");
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         getSupportActionBar().setHomeButtonEnabled(true);
 
@@ -82,19 +85,23 @@ public class MainActivity extends AppCompatActivity {
 
         switch (position) {
             case 0:
-                fragment = new ConnectFragment();
+                fragment = new MainFragment();
                 break;
             case 1:
-                fragment = new FixturesFragment();
+                fragment = new ActivityFragment();
                 break;
             case 2:
-                fragment = new TableFragment();
+                fragment = new FixturesFragment();
                 break;
             case 3:
+                fragment = new TableFragment();
+                break;
+            case 4:
                 fragment = new MapsFragment();
                 break;
 
             default:
+                fragment = new TableFragment();
                 break;
         }
 

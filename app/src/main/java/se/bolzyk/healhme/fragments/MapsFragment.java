@@ -90,4 +90,19 @@ public class MapsFragment extends Fragment  {
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
     }
+
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+    }
+
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+    }
 }
