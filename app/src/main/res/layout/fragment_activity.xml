@@ -67,7 +67,7 @@
             android:layout_marginTop="5dp" />
 
 
-        <!-- safe and read -->
+        <!-- safe and clear -->
         <TextView
             android:id="@+id/save_date"
             android:layout_width="match_parent"
@@ -85,10 +85,10 @@
             android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp" />
         <Button
-            android:id="@+id/read_data"
+            android:id="@+id/clear_all_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/read_data"
+            android:text="@string/clear_all"
             android:background="@color/accent"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp" />

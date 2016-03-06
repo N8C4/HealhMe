@@ -6,11 +6,13 @@
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
 
+
     <string name="choose_activity">Choose Activity</string>
     <string name="choose_date">Choose Date</string>
     <string name="temp_date">12-12-2015</string>
     <string name="select_date">Select Date</string>
     <string name="save_activity">Save Activity</string>
+    <string name="clear_all">Clear All Data</string>
     <string name="read_data">Read Data</string>
 
 
@@ -18,21 +20,10 @@
     <string-array name="navigation_drawer_items_array">
         <item></item>
         <item>Add Activity</item>
-        <item>Fixtures</item>
-        <item>Table</item>
+        <item>Process</item>
         <item>Maps</item>
     </string-array>
 
-
-    <string-array name="day_array">
-        <item>Monday</item>
-        <item>Tuesday</item>
-        <item>Wednesday</item>
-        <item>Thursday</item>
-        <item>Friday</item>
-        <item>Saturday</item>
-        <item>Sunday</item>
-    </string-array>
 
 
     <string-array name="activity_array">

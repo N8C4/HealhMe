@@ -87,7 +87,7 @@ public class ActivityFragment extends Fragment implements View.OnClickListener {
         /*
         load data
          */
-        final Button button2 = (Button) rootView.findViewById(R.id.read_data);
+        final Button button2 = (Button) rootView.findViewById(R.id.clear_all_data);
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 loadData();
@@ -169,6 +169,11 @@ public class ActivityFragment extends Fragment implements View.OnClickListener {
 
 
     private void loadData() {
+
+        SharedPreferences preferences = getContext().getSharedPreferences("db", 0);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.clear();
+        editor.commit();
 
         SharedPreferences sp = getContext().getSharedPreferences("db", 0);
         listArray = sp.getStringSet("set", new HashSet<String>());
